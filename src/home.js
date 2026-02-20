@@ -2,7 +2,6 @@ import resturantlogo from "./resturantlogo.png";
 
 const LoadPage = () => {
     const content = document.querySelector("#content");
-    content.innerHTML = '';
 
     const homepage = document.createElement("div");
     homepage.classList.add("homepage");

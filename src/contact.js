@@ -1,6 +1,5 @@
 const LoadContactPage = () => {
     const content = document.querySelector("#content");
-    content.innerHTML = '';
 
     const contact = document.createElement("div");
     contact.classList.add("contact-info");

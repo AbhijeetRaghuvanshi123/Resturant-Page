@@ -28,7 +28,6 @@ const menuList = [
 
 const LoadMenu = () => {
     const content = document.querySelector("#content");
-    content.innerHTML = '';
 
     const menu = document.createElement("div");
     menu.classList.add("menu");
