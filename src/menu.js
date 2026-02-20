@@ -1,30 +1,11 @@
 const menuList = [
-    {
-        name: "Burger",
-        price: 40
-    },
-    {
-        name: "Pizza",
-        price: 100
-    },
-    {
-        name: "HotDog",
-        price: 70
-    },
-    {
-        name: "Samosa",
-        price: 40
-    },
-    {
-        name: "Coffee",
-        price: 30
-    },
-    {
-        name: "Tea",
-        price: 30
-    }
-]
-
+    { name: "Burger", price: 40, description: "Juicy beef patty with fresh lettuce, tomato, and special sauce." },
+    { name: "Pizza", price: 100, description: "Wood-fired crust topped with cheese, tomatoes, and herbs." },
+    { name: "HotDog", price: 70, description: "Classic sausage in a toasted bun with mustard and ketchup." },
+    { name: "Samosa", price: 40, description: "Crispy pastry filled with spiced potatoes and peas." },
+    { name: "Coffee", price: 30, description: "Freshly brewed coffee made from premium beans." },
+    { name: "Tea", price: 30, description: "A soothing cup of black or green tea to relax your day." }
+];
 
 const LoadMenu = () => {
     const content = document.querySelector("#content");
@@ -33,7 +14,7 @@ const LoadMenu = () => {
     menu.classList.add("menu");
 
     const menuH2 = document.createElement("h2");
-    menuH2.innerText = "Here is Menu 4 U";
+    menuH2.innerText = "Our Delicious Menu";
 
     const items = document.createElement("div");
     items.classList.add("items");
@@ -52,20 +33,15 @@ const loadTable = () =>{
     const thead = document.createElement("thead");
     const headrow = document.createElement("tr");
 
-    const items = document.createElement("th");
-    items.innerText = "Items";
+    ["Item", "Description", "Price"].forEach(text => {
+        const th = document.createElement("th");
+        th.innerText = text;
+        headrow.appendChild(th);
+    });
 
-    const prices = document.createElement("th");
-    prices.innerText = "Prices";
-
-    headrow.appendChild(items);
-    headrow.appendChild(prices);
     thead.appendChild(headrow);
-
-    const tbody = loadTableData();
-
     table.appendChild(thead);
-    table.appendChild(tbody);
+    table.appendChild(loadTableData());
 
     return table;
 }
@@ -75,17 +51,21 @@ const loadTableData = () => {
 
     menuList.forEach(item => {
         const trow = document.createElement("tr");
-        
-        const tdname = document.createElement("td");
-        tdname.innerText = item.name;
-        trow.appendChild(tdname);
 
-        const tdprice = document.createElement("td");
-        tdprice.innerText = item.price;
-        trow.appendChild(tdprice);
+        const tdName = document.createElement("td");
+        tdName.innerText = item.name;
+        trow.appendChild(tdName);
+
+        const tdDesc = document.createElement("td");
+        tdDesc.innerText = item.description;
+        trow.appendChild(tdDesc);
+
+        const tdPrice = document.createElement("td");
+        tdPrice.innerText = `$${item.price}`;
+        trow.appendChild(tdPrice);
 
         tbody.appendChild(trow);
-    })
+    });
 
     return tbody;
 }

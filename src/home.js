@@ -19,10 +19,20 @@ const LoadPage = () => {
     resLogo.src = resturantlogo;
     resLogo.classList.add("res-logo");
     
+    const aboutSection = document.createElement("div");
+    aboutSection.classList.add("about-section");
+    aboutSection.innerHTML = `
+        <h2>About Us</h2>
+        <p>Founded in 2020, Our Restaurant is dedicated to bringing the finest flavors to your table. 
+        Our chefs craft each dish with passion, ensuring a delightful culinary experience every time.</p>
+        <p>We believe in quality, freshness, and hospitality — the three pillars that make every meal unforgettable.</p>
+    `;
+
     homepage.appendChild(welcome);
     homepage.appendChild(tagLine);
     homepage.appendChild(tagLine2);
     homepage.appendChild(resLogo);
+    homepage.appendChild(aboutSection);
 
     content.appendChild(homepage);
 }

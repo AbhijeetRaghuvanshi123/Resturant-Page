@@ -24,6 +24,14 @@ const LoadContactPage = () => {
     p4.innerText = "Email: contact@ourrestaurant.com";
     contact.appendChild(p4);
 
+    const p5 = document.createElement("p");
+    p5.innerText = "Opening Hours: Mon-Sun 10:00 AM - 10:00 PM";
+    contact.appendChild(p5);
+
+    const p6 = document.createElement("p");
+    p6.innerHTML = "Follow us on <a href='#'>Instagram</a> | <a href='#'>Facebook</a>";
+    contact.appendChild(p6);
+
     content.appendChild(contact);
 }
 

@@ -119,3 +119,12 @@ th {
   margin: 6px 0;
   font-size: 1.1rem;
 }
+
+.menu table td:nth-child(2) {
+    font-style: italic;
+    color: #6b4f2a;
+}
+
+.menu table tr:hover {
+    background-color: #ffe5cc;
+}
